@@ -1,0 +1,76 @@
+{
+  "selected_model": "XGBoost Classifier v1.0",
+  "selection_reason": "Performance difference is marginal; Logistic Regression provides high interpretability while XGBoost provides slight edge on multi-channel patterns.",
+  "logistic_regression": {
+    "model_name": "Logistic Regression Baseline",
+    "roc_auc": 0.776,
+    "pr_auc": 0.847,
+    "precision": 0.775,
+    "recall": 0.878,
+    "f1": 0.824,
+    "brier_score": 0.17
+  },
+  "xgboost": {
+    "model_name": "XGBoost Classifier v1.0",
+    "roc_auc": 0.756,
+    "pr_auc": 0.834,
+    "precision": 0.761,
+    "recall": 0.91,
+    "f1": 0.829,
+    "brier_score": 0.174
+  },
+  "calibration_curves": {
+    "lr_curve": [
+      {
+        "predicted": 0.33,
+        "actual": 0.29
+      },
+      {
+        "predicted": 0.5,
+        "actual": 0.45
+      },
+      {
+        "predicted": 0.77,
+        "actual": 0.75
+      },
+      {
+        "predicted": 0.82,
+        "actual": 0.9
+      }
+    ],
+    "xgb_curve": [
+      {
+        "predicted": 0.35,
+        "actual": 0.29
+      },
+      {
+        "predicted": 0.5,
+        "actual": 0.37
+      },
+      {
+        "predicted": 0.75,
+        "actual": 0.84
+      },
+      {
+        "predicted": 0.82,
+        "actual": 0.84
+      }
+    ]
+  },
+  "feature_names": [
+    "avg_monthly_inflow",
+    "income_stability_score",
+    "utility_ontime_rate",
+    "expense_to_income_ratio",
+    "active_days_ratio",
+    "inflow_trend_slope",
+    "gst_compliance_rate",
+    "merchant_revenue_stability"
+  ],
+  "dataset_summary": {
+    "total_samples": 1500,
+    "train_samples": 1125,
+    "test_samples": 375,
+    "positive_rate": 0.681
+  }
+}
